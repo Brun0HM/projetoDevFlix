@@ -13,23 +13,3 @@
 
 
 
-.scroll-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-.scroll-buttons button {
-  background: #007bff;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.scroll-buttons button:hover {
-  background: #0056b3;
-}
-
