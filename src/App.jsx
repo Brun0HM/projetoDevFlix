@@ -2,8 +2,6 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
 
-
-
 const App = () => {
   return (
     <div className="container py-4 px-3 mx-auto">
