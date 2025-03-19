@@ -1,12 +1,13 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
+import MovieCard from "./components/movieCard/MovieCard";
 
 const App = () => {
   return (
     <div className="container py-4 px-3 mx-auto">
-      <h1>Hello, Bootstrap and Vite!</h1>
-      <button className="btn btn-danger">Click me</button>
+ <MovieCard/>
+     
     </div>
   );
 };
