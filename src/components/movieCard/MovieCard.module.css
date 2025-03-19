@@ -1,8 +1,8 @@
 .movie {
-  max-width:280px ;
-  max-height:366px ;
-  min-width: 280px;
-  min-height: 366px;
+  max-width:210px ;
+  max-height:300px ;
+  min-width: 210px;
+  min-height: 300px;
   margin: 0.5rem;
   position: relative;
   overflow: hidden;
@@ -33,7 +33,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 16px 24px 20px;
+  padding: 15px 20px 15px;
 }
 
 .movie div:nth-of-type(2) span {
@@ -42,8 +42,8 @@
   font-size: 13px;
 }
 
-.movie div:nth-of-type(2) h4 {
-  margin-top: 5px;
+.movie div:nth-of-type(2) h5 {
+  margin: 0;
   color: #ffffff;
 }
 
