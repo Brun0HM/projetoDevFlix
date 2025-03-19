@@ -1,0 +1,7 @@
+.bannerdiv {
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2)),
+                url("https://images.moviesanywhere.com/movie-hero/e43fdddf47264ff4fa6a2d11ca630287.jpeg?r=16x9&w=2560") center/cover no-repeat;
+    padding: 170px;
+    width: 100%; 
+    height: 500px; 
+  }
