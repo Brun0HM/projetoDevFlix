@@ -5,11 +5,11 @@ const MovieCard = () => {
         <>
           <div className={styles.movie} >
             <div>
-              <img src='https://placehold.co/280x400' alt="" />
+              <img src='https://placehold.co/280x366' alt="" />
             </div>
             <div>
-              <h3>Title</h3>
-              <span className='fw-bold fs-6 text-uppercase'>Movie</span>
+              <h4>Title</h4>
+              <span className='fw-bold  text-uppercase'>Movie</span>
             </div>
           </div>
         

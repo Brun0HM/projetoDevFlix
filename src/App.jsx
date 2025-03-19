@@ -6,8 +6,6 @@ import MovieCard from "./components/movieCard/MovieCard";
 const App = () => {
   return (
     <div className="container py-4 px-3 mx-auto">
- <MovieCard/>
-     
     </div>
   );
 };
