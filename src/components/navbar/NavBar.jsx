@@ -53,7 +53,7 @@ const NavBar = (props) => {
               </li>
             </ul>
           </div>
-          {/* Barra de pesquisa fora do menu toggle */}
+
           <div className={`d-flex align-items-center ${styles.back}`}>
             <span className="text-light">
               <ion-icon name="search-sharp"></ion-icon>
