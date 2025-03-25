@@ -1,20 +1,36 @@
+
+![devflix](https://github.com/user-attachments/assets/9bf2c9db-538e-4f31-b3fc-3c122328f2e5)
+
+
+
 # DevFlix
-* Serviço de streaming com inspiração na netflix feito em grupo para entrega de projeto
+
+Projeto de serviço de streaming insipirado na netflix feito com REACT VITE e consumo da API do TMDB para fornecer informações detalhadas sobre séries e filmes.
 
 
-## 📌 Sobre o Projeto  
 
-Este projeto é uma aplicação web desenvolvida com **React + Vite** que consome a **API do TMDb** para fornecer informações detalhadas sobre filmes e séries.  
 
-Com uma interface moderna e intuitiva, os usuários podem:  
-✅ Pesquisar por qualquer filme ou série rapidamente.  
-✅ Acessar detalhes como sinopse, elenco, avaliação e data de lançamento.  
-✅ Explorar tendências e descobrir novos conteúdos populares.  
+## Autores
 
-O projeto foi pensado para proporcionar uma experiência fluida e responsiva, tornando a busca por entretenimento mais prática e agradável. 🚀🎬
+- [@Brun0HM](https://www.github.com/brun0HM)
+- [@rattin1](https://www.github.com/rattin1)
+- [@thiagom22](https://www.github.com/thiagom22)
+## Funcionalidades
 
-## 🚀 tecnologias Utilizadas
-[✔️] HTML5, CSS3 e JavaScript
-[✔️] Node.js
-[✔️] API TMDB
-[✔️] Bottstrap e Trello
+- Temas dark e light
+- Buscar séries e filmes
+- Modo tela cheia
+- Informações sobre filme
+
+
+## 🛠 Habilidades utilizadas
+Javascript, HTML, CSS, REACT + VITE, BootStrap, Node, TMDB API e Trello(kanban)
+
+## Screenshot
+
+![App Screenshot](https://placeholder.co/468x300)
+
+
+## Link site
+
+https://projetodevflix-mauve.vercel.app
