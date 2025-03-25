@@ -61,6 +61,8 @@ const NavBar = (props) => {
             <input
               className={`${styles.searchInput} ms-2 text-light rounded bg-dark border-0 form`}
               placeholder="Nome do filme"
+              onChange={props.Change}
+              onKeyDown={props.KeyDown}
               type="text"
             />
             <img

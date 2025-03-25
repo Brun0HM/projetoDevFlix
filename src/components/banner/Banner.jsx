@@ -9,9 +9,10 @@ const Banner = ({movie}) => {
     <div
       className={styles.bannerdiv}
       style={{
-        backgroundImage: `url(${backgroundImage})`,
+        backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1)), url(${backgroundImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
+        
       }}
     >
       <div>
