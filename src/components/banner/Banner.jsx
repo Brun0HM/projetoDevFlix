@@ -15,8 +15,8 @@ const Banner = ({movie}) => {
       }}
     >
       <div>
-        <h1 className={}>{title}</h1>
-        <p className={styles.bannerDescription}>{description}</p>
+        <h1 className="text-light">{title}</h1>
+        <p className="text-light">{description}</p>
       </div>
       <button className="btn btn-danger btn-sm fw-bold px-4 py-2 me-3 mb-3">
         Assistir Agora
