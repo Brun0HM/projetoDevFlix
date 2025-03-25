@@ -64,6 +64,7 @@ const App = () => {
             ))}
           </div>
         </div>
+        <Footer logo={logo} />
       </div>
     </>
   );
