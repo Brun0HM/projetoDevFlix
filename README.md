@@ -27,7 +27,8 @@ Javascript, HTML, CSS, REACT + VITE, BootStrap, Node, TMDB API e Trello(kanban)
 
 ## Screenshot
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![print](https://github.com/user-attachments/assets/bea52a9b-81a4-4601-9f25-3c424bb64e4b)
+
 
 
 ## Link site
