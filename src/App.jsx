@@ -7,6 +7,7 @@ import Banner from "./components/banner/Banner";
 import Footer from "./components/footer/Footer";
 import { useEffect, useState } from "react";
 import logo from "./assets/logo.png";
+import perfil from "./assets/perfil.png";
 const App = () => {
   const [search, setSearch] = useState("");
   const [movies, setMovies] = useState([]);
@@ -53,6 +54,7 @@ const App = () => {
       <div className="bg-black">
         <NavBar
           logo={logo}
+          perfil={perfil}
           KeyDown={handleSearch}
           Change={(e) => setSearch(e.target.value)}
         />

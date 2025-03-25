@@ -31,26 +31,6 @@ const NavBar = (props) => {
                   Inicio
                 </a>
               </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link text-light"
-                  href="#"
-                  data-bs-toggle="button"
-                  aria-pressed="false"
-                >
-                  Categorias
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link text-light"
-                  href="#"
-                  data-bs-toggle="button"
-                  aria-pressed="false"
-                >
-                  Séries
-                </a>
-              </li>
             </ul>
           </div>
           {/* Barra de pesquisa fora do menu toggle */}
@@ -66,7 +46,7 @@ const NavBar = (props) => {
               type="text"
             />
             <img
-              src="https://placehold.co/50x50"
+              src={props.perfil}
               alt="profile"
               className="rounded-2 ms-3"
             />
