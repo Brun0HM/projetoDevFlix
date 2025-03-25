@@ -6,7 +6,7 @@ const NavBar = (props) => {
       <nav className="navbar navbar-expand-lg navbar-dark bg-black p-3">
         <div className="container-fluid">
           <a className="navbar-brand ms-5" href="#">
-            <img src="https://placehold.co/180x60" alt="logo" />
+            <img src={props.logo} alt="logo" />
           </a>
           <button
             className="navbar-toggler"

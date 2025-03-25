@@ -1,6 +1,6 @@
 import styles from './Footer.module.css'
 
-const Footer = () => {
+const Footer = (props) => {
   return (
     <footer className="text-center p-5 fw-bold text-white bg-black d-flex justify-content-between">
       <div className="text-start">
@@ -9,7 +9,7 @@ const Footer = () => {
         <h6>bruno martins</h6>
       </div>
       <div>
-        <img src="https://placehold.co/180x60" alt="" />
+        <img src={props.logo} alt="" />
       </div>
       <div className="text-end">
         <h6><a href="https://www.instagram.com/raattini/" className="text-white">@raattini</a></h6>
