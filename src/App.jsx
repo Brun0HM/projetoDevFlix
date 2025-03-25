@@ -6,10 +6,7 @@ import NavBar from "./components/navbar/NavBar";
 import Banner from "./components/banner/Banner";
 import Footer from "./components/footer/Footer";
 const App = () => {
-  return (
-    <>
-    </>
-  );
+  return <></>;
 };
 
 export default App;
