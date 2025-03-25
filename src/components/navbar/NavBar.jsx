@@ -31,26 +31,6 @@ const NavBar = (props) => {
                   Inicio
                 </a>
               </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link text-light"
-                  href="#"
-                  data-bs-toggle="button"
-                  aria-pressed="false"
-                >
-                  Categorias
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link text-light"
-                  href="#"
-                  data-bs-toggle="button"
-                  aria-pressed="false"
-                >
-                  Séries
-                </a>
-              </li>
             </ul>
           </div>
 
@@ -63,9 +43,7 @@ const NavBar = (props) => {
               placeholder="Nome do filme"
               type="text"
             />
-            <img
-              src="https://placehold.co/50x50"
-              alt="profile"
+            <img src={props.perfil} alt="perfil"
               className="rounded-2 ms-3"
             />
           </div>
