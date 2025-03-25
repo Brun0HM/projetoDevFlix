@@ -1,12 +1,37 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![logo](https://github.com/user-attachments/assets/52dd155c-0e61-4ecf-970c-90b2d9f0181c)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# DevFlix
 
-## Expanding the ESLint configuration
+Projeto de serviço de streaming insipirado na netflix feito com REACT VITE e consumo da API do TMDB para fornecer informações detalhadas sobre séries e filmes.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
+
+## Autores
+
+- [@Brun0HM](https://www.github.com/brun0HM)
+- [@rattin1](https://www.github.com/rattin1)
+- [@thiagom22](https://www.github.com/thiagom22)
+## Funcionalidades
+
+- Temas dark e light
+- Buscar séries e filmes
+- Modo tela cheia
+- Informações sobre filme
+
+
+## 🛠 Habilidades utilizadas
+Javascript, HTML, CSS, REACT + VITE, BootStrap, Node, TMDB API e Trello(kanban)
+
+## Screenshot
+
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
+
+## Link site
+
+https://projetodevflix-mauve.vercel.app
+
+
