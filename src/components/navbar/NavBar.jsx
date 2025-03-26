@@ -8,31 +8,13 @@ const NavBar = (props) => {
           <a className="navbar-brand ms-5" href="#">
             <img src={props.logo} alt="logo" />
           </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
+         
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a
-                  className="nav-link text-light"
-                  href="#"
-                  data-bs-toggle="button"
-                  aria-pressed="false"
-                >
-                  Inicio
-                </a>
+                <a className="nav-link text-light">Inicio</a>
               </li>
             </ul>
-          </div>
+       
 
           <div className={`d-flex align-items-center ${styles.back}`}>
             <span className="text-light">
@@ -45,11 +27,7 @@ const NavBar = (props) => {
               onKeyDown={props.KeyDown}
               type="text"
             />
-            <img
-              src={props.perfil}
-              alt="profile"
-              className="rounded-2 ms-3"
-            />
+            <img src={props.perfil} alt="profile" className="rounded-2 ms-3" />
           </div>
         </div>
       </nav>
