@@ -1,12 +1,46 @@
 import styles from "./Modal.module.css";
 import devflix from "../../../public/favicon.svg";
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
 
 const Modal = (props) => {
-  const runtime = `https://api.themoviedb.org/3/movie/${props.id}?api_key=### `
+  const [runtime, setRuntime] = useState(null); // Estado para armazenar a duração do filme
+  const [gen, setGen] = useState(null);
+  const [cast, setCast] = useState([]);
   const backpath = `https://image.tmdb.org/t/p/original/${props.backdrop_path}`;
+  const apiKey = "06f11adac65df182a1699011c40cfd10"; // Substitua pela sua chave de API
+
+  useEffect(() => {
+    const fetchMovieDetails = async () => {
+      try {
+        const response = await fetch(
+          `https://api.themoviedb.org/3/movie/${props.id}?api_key=${apiKey}&language=pt-BR`
+        );
+        const data = await response.json();
+        setRuntime(data.runtime);
+        setGen(data.genres.map((genre) => genre.name));
+      } catch (error) {
+        console.error("Erro ao buscar detalhes do filme:", error);
+      }
+    };
+    const fetchMovieCredits = async () => {
+      try {
+        // Requisição para o elenco do filme
+        const response = await fetch(
+          `https://api.themoviedb.org/3/movie/${props.id}/credits?api_key=${apiKey}&language=pt-BR`
+        );
+        const data = await response.json();
+        setCast(data.cast.slice(0, 5).map((member) => member.name)); // Pega os 5 primeiros nomes do elenco
+      } catch (error) {
+        console.error("Erro ao buscar o elenco do filme:", error);
+      }
+    };
+
+    fetchMovieDetails();
+    fetchMovieCredits();
+  }, [props.id]);
+
   return (
+    <div className="overflow-y-auto">
     <div className={styles.modalBackdrop} onClick={props.click}>
       <div className={styles.movieModal} onClick={(e) => e.stopPropagation()}>
         <div className={styles.movieInfo}>
@@ -33,12 +67,13 @@ const Modal = (props) => {
         <br />
         <div className={styles.containerMisc}>
           <div className={styles.containerFlex}>
-            Avaliação: {} | Duração: {runtime} |{" "}
+            Avaliação: {props.vote_average} | Duração: {runtime + `minutos`} |{" "}
             {props.release_date}
           </div>
           <div className={styles.containerFlex}>
             {/* <p>Elenco: {props.Actors}</p> */}
-            <p>Gênero: {props.genre_id}</p>
+            <p>Gênero: {gen && gen.join(", ")}</p>
+            <p>Elenco: {cast && cast.join(", ")}</p>
           </div>
         </div>
         <div className={styles.desc}>
@@ -46,6 +81,7 @@ const Modal = (props) => {
         </div>
       </div>
     </div>
+    </div>  
   );
 };
 
