@@ -21,7 +21,7 @@ const MovieCard = (prop) => {
         </div>
         <div>
           <h5>{truncateString(prop.title, 15)}</h5>
-          <span className="fw-bold  text-uppercase">{prop.genre_ids}</span>
+          <span className="fw-bold  text-uppercase">movie</span>
         </div>
       </div>
      {isModalOpen && <Modal {...prop} click={toggleModal} />}
