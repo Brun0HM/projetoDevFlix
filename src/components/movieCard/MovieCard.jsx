@@ -1,9 +1,9 @@
-
 import Modal from "../modal/Modal";
 import styles from "./MovieCard.module.css";
 import { useState } from "react";
 const MovieCard = (prop) => {
   const truncateString = (str, num) => {
+    if (!str) return ""; // Retorna uma string vazia se str for undefined ou null
     if (str.length <= num) {
       return str;
     }

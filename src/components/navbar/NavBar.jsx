@@ -4,52 +4,50 @@ const NavBar = (props) => {
   return (
     <header>
       <nav className="navbar navbar-expand-lg navbar-dark bg-black p-3">
-        <div className="container-fluid">
-          <a className="navbar-brand ms-5" href="#">
-            <img src={props.logo} alt="logo" />
+        <div className="container-fluid d-flex justify-content-between align-items-center">
+          {/* Logo */}
+          <a className="navbar-brand" href="#">
+            <img src={props.logo} alt="logo" style={{ height: "40px" }} />
           </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a
-                  className="nav-link text-light"
-                  href="#"
-                  data-bs-toggle="button"
-                  aria-pressed="false"
-                >
-                  Inicio
-                </a>
-              </li>
-            </ul>
+
+          {/* Central Content */}
+          <div className="d-none d-lg-flex align-items-center">
+            <div className="d-flex align-items-center">
+              <span className="text-light me-2">
+                <ion-icon name="search-sharp"></ion-icon>
+              </span>
+              <input
+                className={`${styles.searchInput} text-light rounded bg-dark border-0`}
+                placeholder="Nome do filme"
+                onChange={props.Change}
+                onKeyDown={props.KeyDown}
+                type="text"
+              />
+            </div>
           </div>
-          {/* Barra de pesquisa fora do menu toggle */}
-          <div className={`d-flex align-items-center ${styles.back}`}>
-            <span className="text-light">
-              <ion-icon name="search-sharp"></ion-icon>
-            </span>
-            <input
-              className={`${styles.searchInput} ms-2 text-light rounded bg-dark border-0 form`}
-              placeholder="Nome do filme"
-              onChange={props.Change}
-              onKeyDown={props.KeyDown}
-              type="text"
-            />
-            <img
-              src={props.perfil}
-              alt="profile"
-              className="rounded-2 ms-3"
-            />
+
+          {/* Profile Image */}
+          <img
+            src={props.perfil}
+            alt="profile"
+            className="rounded-2"
+          />
+
+          {/* Central Content for Mobile */}
+          <div className="d-flex d-lg-none flex-column align-items-center mt-3">
+            <div className="d-flex align-items-center w-100">
+              <span className="text-light me-2">
+                <ion-icon name="search-sharp"></ion-icon>
+              </span>
+              <input
+                className={`${styles.searchInput} text-light rounded bg-dark border-0`}
+                placeholder="Nome do filme"
+                onChange={props.Change}
+                onKeyDown={props.KeyDown}
+                type="text"
+                style={{ width: "100%" }}
+              />
+            </div>
           </div>
         </div>
       </nav>

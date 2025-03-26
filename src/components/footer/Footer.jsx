@@ -1,23 +1,48 @@
-import styles from './Footer.module.css'
+import styles from "./Footer.module.css";
 
 const Footer = (props) => {
   return (
-    <footer className="text-center p-5 fw-bold text-white bg-black d-flex justify-content-between">
-      <div className="text-start">
-        <h6>ryan rattini</h6>
-        <h6>mazzi</h6>
-        <h6>bruno martins</h6>
-      </div>
-      <div>
+    <footer
+      className={
+        "d-flex text-center p-5 text-white bg-black d-flex flex-column flex-md-row justify-content-between align-items-center"
+      }
+    >
+      <div className="mb-3 mb-md-0">
         <img src={props.logo} alt="" />
       </div>
-      <div className="text-end">
-        <h6><a href="https://www.instagram.com/raattini/" className="text-white">@raattini</a></h6>
-        <h6><a href="https://www.instagram.com/thiago.mazzi/" className="text-white">@thiago.mazzi</a></h6>
-        <h6><a href="https://www.instagram.com/fk.brun0/" className="text-white">@fk.brun0</a></h6>
+<div>
+  <p className="fst-normal fs-6">Todos os direitos reservados
+© [2025] [Bruno, mazzi e Ryan]. Todos os direitos reservados.</p>
+</div>
+
+      <div className="fw-bold">
+        <h6>
+          <a
+            href="https://www.instagram.com/raattini/"
+            className="text-white text-decoration-none"
+          >
+            @raattini
+          </a>
+        </h6>
+        <h6>
+          <a
+            href="https://www.instagram.com/thiago.mazzi/"
+            className="text-white text-decoration-none"
+          >
+            @thiago.mazzi
+          </a>
+        </h6>
+        <h6>
+          <a
+            href="https://www.instagram.com/fk.brun0/"
+            className="text-white text-decoration-none"
+          >
+            @fk.brun0
+          </a>
+        </h6>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
