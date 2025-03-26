@@ -79,4 +79,17 @@ body.light-mode .navbar-toggler-icon {
 
 body {
   user-select: none;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
+
+:root[data-bs-theme="light"] {
+  --background-color: #ffffff;
+  --text-color: #000000;
+}
+
+:root[data-bs-theme="dark"] {
+  --background-color: #000000;
+  --text-color: #ffffff;
+}
+

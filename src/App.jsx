@@ -8,6 +8,7 @@ import Footer from "./components/footer/Footer";
 import { useEffect, useState } from "react";
 import logo from "./assets/logo.png";
 import perfil from "./assets/perfil.png";
+import LightMode from "./components/lightMode/LightMode";
 const App = () => {
   const [search, setSearch] = useState("");
   const [movies, setMovies] = useState([]);
@@ -37,21 +38,19 @@ const App = () => {
     }
   };
 
-const url3 =`https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=27`
-fetch(url3, {
-  method: "GET",
-  headers: {
-    Authorization: `Bearer ${accessToken}`,
-    Accept: "application/json"
-  },
-})
-.then((response) => response.json())
-.then((data) => setHorrorMovies(data.results))
-.catch((error) =>
-  console.error("Erro ao buscar os filmes de terror:", error)
-);
-
-
+  const url3 = `https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=27`;
+  fetch(url3, {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      Accept: "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => setHorrorMovies(data.results))
+    .catch((error) =>
+      console.error("Erro ao buscar os filmes de terror:", error)
+    );
 
   const url2 = `https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=28`;
   fetch(url2, {
@@ -85,16 +84,42 @@ fetch(url3, {
   };
   const mostPopularMovie = popular.length > 0 ? popular[0] : null;
 
+  const mudaTema = () => {
+    const tema = window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+
+    document.documentElement.setAttribute("data-bs-theme", tema || "light");
+  };
+
+  mudaTema();
+
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", mudaTema);
+
+  const toggleTheme = () => {
+    const currentTheme = document.documentElement.getAttribute("data-bs-theme");
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-bs-theme", newTheme);
+  };
+
   return (
     <>
-      <div className="bg-black">
+      <div className="bg-black position-relative">
         <NavBar
           logo={logo}
           perfil={perfil}
           KeyDown={handleSearch}
           Change={(e) => setSearch(e.target.value)}
         />
-        {mostPopularMovie && <Banner movie={mostPopularMovie} />}
+
+        
+          {/* LightMode sobreposto */}
+          <LightMode toggleTheme={toggleTheme} />
+
+          {mostPopularMovie && <Banner movie={mostPopularMovie} />}
+
         <div>
           <h3 className="text-light m-3">Lista</h3>
           <div className="d-flex overflow-x-scroll scroller">
