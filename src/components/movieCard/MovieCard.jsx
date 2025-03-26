@@ -24,7 +24,7 @@ const MovieCard = (prop) => {
           <span className="fw-bold  text-uppercase">movie</span>
         </div>
       </div>
-     {isModalOpen && <Modal {...prop} click={toggleModal} />}
+     {isModalOpen && <Modal {...prop} click={toggleModal} acces={prop.ace} />}
     </>
   );
 };

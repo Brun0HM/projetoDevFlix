@@ -1,9 +1,10 @@
 import styles from "./Modal.module.css";
 import devflix from "../../../public/favicon.svg";
+import { useState } from "react";
 
 
 const Modal = (props) => {
-  const runtime = `https://api.themoviedb.org/3/movie/${props.id}`
+  const runtime = `https://api.themoviedb.org/3/movie/${props.id}?api_key=### `
   const backpath = `https://image.tmdb.org/t/p/original/${props.backdrop_path}`;
   return (
     <div className={styles.modalBackdrop} onClick={props.click}>
