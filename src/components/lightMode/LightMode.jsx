@@ -14,7 +14,7 @@ const LightMode = () => {
   };
 
   return (
-    <span>
+    <span className="position-absolute end-0">
       {" "}
       <label>
         <input

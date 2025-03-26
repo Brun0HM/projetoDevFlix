@@ -114,11 +114,12 @@ const App = () => {
           Change={(e) => setSearch(e.target.value)}
         />
 
-        
-          {/* LightMode sobreposto */}
+        {/* LightMode sobreposto */}
+        <div className="position-relative">
           <LightMode toggleTheme={toggleTheme} />
 
           {mostPopularMovie && <Banner movie={mostPopularMovie} />}
+        </div>
 
         <div>
           <h3 className="text-light m-3">Lista</h3>
