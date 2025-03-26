@@ -1,7 +1,9 @@
 import styles from "./Modal.module.css";
 import devflix from "../../../public/favicon.svg";
 
+
 const Modal = (props) => {
+  const runtime = `https://api.themoviedb.org/3/movie/${props.id}`
   const backpath = `https://image.tmdb.org/t/p/original/${props.backdrop_path}`;
   return (
     <div className={styles.modalBackdrop} onClick={props.click}>
@@ -30,7 +32,7 @@ const Modal = (props) => {
         <br />
         <div className={styles.containerMisc}>
           <div className={styles.containerFlex}>
-            Avaliação: {} | Duração: {props.Runtime} |{" "}
+            Avaliação: {} | Duração: {runtime} |{" "}
             {props.release_date}
           </div>
           <div className={styles.containerFlex}>
