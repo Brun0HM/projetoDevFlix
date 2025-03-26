@@ -3,12 +3,11 @@ import devflix from "../../../public/favicon.svg";
 import { useState, useEffect } from "react";
 
 const Modal = (props) => {
-  const [runtime, setRuntime] = useState(null); // Estado para armazenar a duração do filme
+  const [runtime, setRuntime] = useState(null);
   const [gen, setGen] = useState(null);
   const [cast, setCast] = useState([]);
   const backpath = `https://image.tmdb.org/t/p/original/${props.backdrop_path}`;
-  const apiKey = import.meta.env.VITE_TMDB_API_KEY; // Substitua pela sua chave de API
-
+  const apiKey = import.meta.env.VITE_TMDB_API_KEY;
   useEffect(() => {
     const fetchMovieDetails = async () => {
       try {
@@ -41,47 +40,50 @@ const Modal = (props) => {
 
   return (
     <div className="overflow-y-auto">
-    <div className={styles.modalBackdrop} onClick={props.click}>
-      <div className={styles.movieModal} onClick={(e) => e.stopPropagation()}>
-        <div className={styles.movieInfo}>
-          <img src={backpath} alt={`Imagem da capa do filme ${props.title}`} />
-          <button className={styles.btnClose} onClick={props.click}>
-            X
-          </button>
-          <div className={styles.movieType}>
-            <div>
-              <img src={devflix} alt="" />
-              <h1>{props.title}</h1>
-              <a
-                className="btn btn-danger btn-sm fw-bold px-4 py-2 me-3 mb-3"
-                href={`https://google.com/search?q=${encodeURIComponent(
-                  props.title
-                )}`}
-                target="_blank"
-              >
-                Assistir Agora
-              </a>
+      <div className={styles.modalBackdrop} onClick={props.click}>
+        <div className={styles.movieModal} onClick={(e) => e.stopPropagation()}>
+          <div className={styles.movieInfo}>
+            <img
+              src={backpath}
+              alt={`Imagem da capa do filme ${props.title}`}
+            />
+            <button className={styles.btnClose} onClick={props.click}>
+              X
+            </button>
+            <div className={styles.movieType}>
+              <div>
+                <img src={devflix} alt="" />
+                <h1>{props.title}</h1>
+                <a
+                  className="btn btn-danger btn-sm fw-bold px-4 py-2 me-3 mb-5"
+                  href={`https://google.com/search?q=${encodeURIComponent(
+                    props.title
+                  )}`}
+                  target="_blank"
+                >
+                  Assistir Agora
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-        <br />
-        <div className={styles.containerMisc}>
-          <div className={styles.containerFlex}>
-            Avaliação: {props.vote_average} | Duração: {runtime + `minutos`} |{" "}
-            {props.release_date}
+          <br />
+          <div className={styles.containerMisc}>
+            <div className={styles.containerFlex}>
+              Avaliação: {props.vote_average} | Duração: {runtime + `minutos`} |{" "}
+              {props.release_date}
+            </div>
+            <div className={styles.containerFlex}>
+              {/* <p>Elenco: {props.Actors}</p> */}
+              <p>Gênero: {gen && gen.join(", ")}</p>
+              <p>Elenco: {cast && cast.join(", ")}</p>
+            </div>
           </div>
-          <div className={styles.containerFlex}>
-            {/* <p>Elenco: {props.Actors}</p> */}
-            <p>Gênero: {gen && gen.join(", ")}</p>
-            <p>Elenco: {cast && cast.join(", ")}</p>
+          <div className={styles.desc}>
+            <p>Sinopse: {props.overview}</p>
           </div>
-        </div>
-        <div className={styles.desc}>
-          <p>Sinopse: {props.overview}</p>
         </div>
       </div>
     </div>
-    </div>  
   );
 };
 

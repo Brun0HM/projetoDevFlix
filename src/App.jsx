@@ -36,22 +36,19 @@ const App = () => {
       console.error("Erro ao buscar os filmes populares:", error);
     }
   };
-
-const url3 =`https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=27`
-fetch(url3, {
-  method: "GET",
-  headers: {
-    Authorization: `Bearer ${accessToken}`,
-    Accept: "application/json"
-  },
-})
-.then((response) => response.json())
-.then((data) => setHorrorMovies(data.results))
-.catch((error) =>
-  console.error("Erro ao buscar os filmes de terror:", error)
-);
-
-
+  const url3 = `https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=27`;
+  fetch(url3, {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      Accept: "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => setHorrorMovies(data.results))
+    .catch((error) =>
+      console.error("Erro ao buscar os filmes de terror:", error)
+    );
 
   const url2 = `https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=28`;
   fetch(url2, {
@@ -66,6 +63,7 @@ fetch(url3, {
     .catch((error) =>
       console.error("Erro ao buscar os filmes de ação:", error)
     );
+
 
   const searchMovie = async (titulo) => {
     const url2 = `https://api.themoviedb.org/3/search/movie?language=pt-BR&query=${titulo}`;
@@ -99,7 +97,7 @@ fetch(url3, {
           <h3 className="text-light m-3">Lista</h3>
           <div className="d-flex overflow-x-scroll scroller">
             {movies.map((movie, index) => (
-              <MovieCard key={index} {...movie} />
+              <MovieCard key={index} {...movie} type="movie" />
             ))}
           </div>
         </div>
@@ -108,7 +106,7 @@ fetch(url3, {
           <h3 className="text-light m-3">Ação</h3>
           <div className="d-flex overflow-x-scroll scroller">
             {actionMovies.map((movie, index) => (
-              <MovieCard key={index} {...movie} />
+              <MovieCard key={index} {...movie} type="movie" />
             ))}
           </div>
         </div>
@@ -117,7 +115,7 @@ fetch(url3, {
           <h3 className="text-light m-3">Terror</h3>
           <div className="d-flex overflow-x-scroll scroller">
             {horrorMovies.map((movie, index) => (
-              <MovieCard key={index} {...movie} />
+              <MovieCard key={index} {...movie} type="movie" />
             ))}
           </div>
         </div>
