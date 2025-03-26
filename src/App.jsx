@@ -18,21 +18,24 @@ const App = () => {
   const accessToken =
     "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNmYxMWFkYWM2NWRmMTgyYTE2OTkwMTFjNDBjZmQxMCIsIm5iZiI6MTc0MjQxMjUxNS41NDU5OTk4LCJzdWIiOiI2N2RiMWFlMzA4NzQ5ZWZlMzRlNzdkZWQiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.Vp784RFA4xs-7fVY5iWZdz7jnrSMHh_0ZPngKa_TNNY";
   useEffect(() => {
-    searchMovie("batman");
+    fetchPopularMovies();
   }, []);
-
-  fetch(url, {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${accessToken}`,
-      Accept: "application/json",
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => setPopular(data.results))
-    .catch((error) =>
-      console.error("Erro ao buscar os filmes populares:", error)
-    );
+  const fetchPopularMovies = async () => {
+    try {
+      const response = await fetch(url, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          Accept: "application/json",
+        },
+      });
+      const data = await response.json();
+      setMovies(data.results); // Exibe os populares inicialmente
+      setPopular(data.results); // Salva os populares para exibir depois
+    } catch (error) {
+      console.error("Erro ao buscar os filmes populares:", error);
+    }
+  };
 
 const url3 =`https://api.themoviedb.org/3/discover/movie?language=pt-BR&with_genres=27`
 fetch(url3, {
