@@ -11,7 +11,7 @@ const Footer = (props) => {
         <img src={props.logo} alt="" />
       </div>
 <div>
-  <p className="fst-normal fs-6">Todos os direitos reservados
+  <p className="fst-normal text-white fs-6">Todos os direitos reservados
 © [2025] [Bruno, mazzi e Ryan]. Todos os direitos reservados.</p>
 </div>
 
