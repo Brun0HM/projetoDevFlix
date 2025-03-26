@@ -2,21 +2,18 @@ import styles from "./Modal.module.css";
 import devflix from "../../../public/favicon.svg";
 
 const Modal = (props) => {
+  const backpath = `https://image.tmdb.org/t/p/original/${props.backdrop_path}`
   return (
     <div className={styles.modalBackdrop} onClick={props.click}>
       <div className={styles.movieModal} onClick={(e) => e.stopPropagation()}>
         <div className={styles.movieInfo}>
-          <img
-            src={props.Poster}
-            alt={`Imagem da capa do filme ${props.title}`}
-          />
+          <img src={backpath} alt={`Imagem da capa do filme ${props.title}`} />
           <button className={styles.btnClose} onClick={props.click}>
             X
           </button>
           <div className={styles.movieType}>
             <div>
               <img src={devflix} alt="" />
-              {props.Type}
               <h1>{props.title}</h1>
               <a
                 href={`https://google.com/search?q=${encodeURIComponent(
@@ -41,7 +38,7 @@ const Modal = (props) => {
           </div>
         </div>
         <div className={styles.desc}>
-          <p>Sinopse: SJOIJSOIJIOJSOIJSIJSJSJSJOJSOJSOIS</p>
+          <p>Sinopse: {props.overview}</p>
         </div>
       </div>
     </div>
