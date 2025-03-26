@@ -13,7 +13,7 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 850px;
+    width: 950px;
     transform: translate(-50%, -50%);
     border-radius: 10px;
     background: #000;
@@ -79,8 +79,7 @@
   .movieType a {
     margin-top: 1em;
     padding: 0.2em 0.7em;
-    background: #fff;
-    border-radius: 0.4em;
+    border-radius: 0.3em;
     text-decoration: none;
     font-weight: bolder;
   }

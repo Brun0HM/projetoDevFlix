@@ -1,8 +1,11 @@
 import styles from "./Modal.module.css";
 import devflix from "../../../public/favicon.svg";
+import { useState } from "react";
+
 
 const Modal = (props) => {
-  const backpath = `https://image.tmdb.org/t/p/original/${props.backdrop_path}`
+  const runtime = `https://api.themoviedb.org/3/movie/${props.id}?api_key=### `
+  const backpath = `https://image.tmdb.org/t/p/original/${props.backdrop_path}`;
   return (
     <div className={styles.modalBackdrop} onClick={props.click}>
       <div className={styles.movieModal} onClick={(e) => e.stopPropagation()}>
@@ -16,12 +19,13 @@ const Modal = (props) => {
               <img src={devflix} alt="" />
               <h1>{props.title}</h1>
               <a
+                className="btn btn-danger btn-sm fw-bold px-4 py-2 me-3 mb-3"
                 href={`https://google.com/search?q=${encodeURIComponent(
                   props.title
                 )}`}
                 target="_blank"
               >
-                ▶️ Assistir
+                Assistir Agora
               </a>
             </div>
           </div>
@@ -29,12 +33,12 @@ const Modal = (props) => {
         <br />
         <div className={styles.containerMisc}>
           <div className={styles.containerFlex}>
-            Avaliação: {props.imdbRating} | Duração: {props.Runtime} |{" "}
-            {props.Released}
+            Avaliação: {} | Duração: {runtime} |{" "}
+            {props.release_date}
           </div>
           <div className={styles.containerFlex}>
             {/* <p>Elenco: {props.Actors}</p> */}
-            <p>Gênero: {props.genre}</p>
+            <p>Gênero: {props.genre_id}</p>
           </div>
         </div>
         <div className={styles.desc}>
