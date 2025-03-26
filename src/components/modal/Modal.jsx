@@ -7,7 +7,7 @@ const Modal = (props) => {
   const [gen, setGen] = useState(null);
   const [cast, setCast] = useState([]);
   const backpath = `https://image.tmdb.org/t/p/original/${props.backdrop_path}`;
-  const apiKey = "06f11adac65df182a1699011c40cfd10"; // Substitua pela sua chave de API
+  const apiKey = import.meta.env.VITE_TMDB_API_KEY; // Substitua pela sua chave de API
 
   useEffect(() => {
     const fetchMovieDetails = async () => {

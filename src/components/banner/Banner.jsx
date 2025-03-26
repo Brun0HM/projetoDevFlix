@@ -16,24 +16,17 @@ const Banner = ({ movie }) => {
     >
       <div className="container d-flex flex-column align-items-start">
         <h1 className="text-light fw-bold mb-3 display-4">{title}</h1>
-        <p className={`${styles.maximo} text-light mb-4`}>
-          {description}
-        </p>
-        <button className="btn btn-danger btn-sm fw-bold px-4 py-2">
+        <p className={`${styles.maximo} text-light mb-4`}>{description}</p>
+        <a
+          className="btn btn-danger btn-sm fw-bold px-4 py-2 me-3 mb-3"
+          href={`https://google.com/search?q=${encodeURIComponent(
+            movie.title
+          )}`}
+          target="_blank"
+        >
           Assistir Agora
-        </button>
+        </a>
       </div>
-      <a
-        className="btn btn-danger btn-sm fw-bold px-4 py-2 me-3 mb-3"
-        href={`https://google.com/search?q=${encodeURIComponent(movie.title)}`}
-        target="_blank"
-      >
-        Assistir Agora
-      </a>
-
-      <button className="btn btn-light btn-sm fw-bold px-4 py-2 text-danger me-3 mb-3">
-        + Lista
-      </button>
     </div>
   );
 };
