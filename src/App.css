@@ -9,7 +9,74 @@
   margin-left: 20px;
 }
 
+.scroll-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
 
+.scroll-buttons button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
 
+.scroll-buttons button:hover {
+  background: #0056b3;
+}
 
+body.light-mode .navbar-dark {
+  background-color: #ededed !important;
+}
 
+body.light-mode .bg-black {
+  background-color: #ededed !important;
+}
+
+body.light-mode .text-light {
+  color: #333333 !important;
+}
+
+body.light-mode .movie {
+  box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1) !important;
+}
+
+body.light-mode .movie div:nth-of-type(2) {
+  background: #ededed !important;
+}
+
+body.light-mode .movie div:nth-of-type(2) span {
+  color: #c70000 !important;
+}
+
+body.light-mode .movie div:nth-of-type(2) h5 {
+  color: #2d2926 !important;
+}
+
+body.light-mode .text-white {
+  color: #2d2926 !important;
+}
+
+body.light-mode .btn-light {
+  background-color: #ffffff !important;
+}
+
+body.light-mode .box-shadow {
+  box-shadow: 0px 13px 10px -7px rgba(255, 255, 255, 0.2) !important;
+}
+
+body.light-mode .rgba-black {
+  background-color: rgba(255, 255, 255, 1) !important;
+}
+
+body.light-mode .navbar-toggler-icon {
+  filter: invert(100%) !important;
+}
+
+body {
+  user-select: none;
+}
