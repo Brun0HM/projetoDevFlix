@@ -69,7 +69,7 @@ const Modal = (props) => {
           <br />
           <div className={styles.containerMisc}>
             <div className={styles.containerFlex}>
-              Avaliação: {props.vote_average} | Duração: {runtime + `minutos`} |{" "}
+              Avaliação: {props.vote_average} | Duração: {runtime + `min`} |{" "}
               {props.release_date}
             </div>
             <div className={styles.containerFlex}>
